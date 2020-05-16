@@ -6,9 +6,22 @@ import ChapterCard from "./ChapterCard";
 
 const CardModule = ({ module }) => {
   const [chapList, setChap] = useState([]);
+  const handleClick = () => {
+    getChapterList(module.id)
+      .then(res => {
+        let { userChapterDetails } = res.lessonDetails;
+        setChap(userChapterDetails);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
   return (
     <Fragment>
-      <Container className="module-card border border-solid p-2 my-3">
+      <Container
+        className="module-card border border-solid p-2 my-3"
+        onClick={handleClick}
+      >
         <Row>
           <span className="pl-3 py-2">
             <Avatar
@@ -22,8 +35,15 @@ const CardModule = ({ module }) => {
             <span className="module-name">{module.name}</span>
           </Col>
         </Row>
-
-        <ChapterCard />
+        {chapList.length !== 0
+          ? chapList.map((chapter, inder) => {
+              return (
+                <Row>
+                  <ChapterCard />
+                </Row>
+              );
+            })
+          : ""}
       </Container>
     </Fragment>
   );

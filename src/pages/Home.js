@@ -27,7 +27,7 @@ const Home = ({ dispatch }) => {
         console.log(err);
         setLoading(false);
       });
-  });
+  }, []);
   return (
     <Fragment>
       {isLoading ? (

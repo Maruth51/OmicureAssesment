@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import Avatar from "@material-ui/core/Avatar";
 import "../styles.css";
 
-const ChapterCard = () => {
+const ChapterCard = chapter => {
   return (
     <Fragment>
       <Container className="module-card border border-solid p-2 my-3">
@@ -14,7 +14,7 @@ const ChapterCard = () => {
           <Col>
             <span className="module-title">{"Chapter"}</span>
             <br />
-            <span className="module-name">{"Name"}</span>
+            <span className="module-name">{chapter.title}</span>
           </Col>
         </Row>
       </Container>
