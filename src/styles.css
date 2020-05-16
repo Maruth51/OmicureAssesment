@@ -1,0 +1,78 @@
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.media-box {
+  margin: 30px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+  border-color: #fff;
+  overflow: hidden;
+  border-radius: 12px;
+  border-style: solid;
+}
+
+.title {
+  border: radius 5px;
+  border-style: solid;
+  border-color: rgb(65, 62, 62);
+  border-width: 1px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.avatar {
+  box-shadow: 0 0 10px rgba(175, 171, 171, 0.75);
+}
+.module-card {
+  background-color: #fcfcfc;
+  box-shadow: 0 0 20px rgba(243, 240, 240, 0.75);
+  border-radius: 20px;
+  border-style: solid;
+  margin: 3px auto;
+}
+
+.mod-list {
+  margin: 30px auto;
+  box-shadow: 0 0 20px rgba(204, 198, 198, 0.75);
+  border-radius: 20px;
+  border-style: solid;
+  max-height: 450px;
+  border-width: 1px;
+  border-radius: 12px;
+  background-color: whitesmoke;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  overflow: hidden;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+.module-name {
+  color: #7866df;
+  font-weight: bold;
+  font-size: small;
+}
+.module-title {
+  color: rgb(212, 47, 212);
+  font-size: small;
+  font-weight: bold;
+}

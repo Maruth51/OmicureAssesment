@@ -1,2 +1,0 @@
-# OmicureAssesment
-Created with CodeSandbox
