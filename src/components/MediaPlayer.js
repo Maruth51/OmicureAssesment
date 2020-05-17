@@ -1,8 +1,5 @@
 import React, { Fragment } from "react";
 import { Player, BigPlayButton } from "video-react";
-import "../styles.css";
-import { Alert, Container } from "reactstrap";
-import { connect } from "react-redux";
 import Description from "./Description";
 
 const MediaPlayer = ({ src, text }) => {

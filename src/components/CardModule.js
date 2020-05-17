@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from "react";
-import { Container, Row, Col, Card, Button } from "reactstrap";
-//import { GrClock } from "react-icons/gr";
+import { Container, Row, Col } from "reactstrap";
+import { GrClock } from "react-icons/gr";
 import Avatar from "@material-ui/core/Avatar";
-import "../styles.css";
 import ChapterCard from "./ChapterCard";
 import { getChapterList } from "../services/dataService";
 
@@ -10,7 +9,6 @@ const CardModule = ({ module, updateContent }) => {
   const [chapters, setChapters] = useState([]);
 
   const handleClick = () => {
-    console.log(chapters);
     if (chapters.length === 0) {
       getChapterList(module.id)
         .then(res => {
@@ -39,10 +37,11 @@ const CardModule = ({ module, updateContent }) => {
           <Col>
             <span className="module-title">{module.title + " - "}</span>
             <span className="module-name">{module.name}</span>
+
             <div className="dis-duration">
-              {/* <span>
+              <span style={{ color: "red" }}>
                 <GrClock />
-              </span> */}
+              </span>
               {" " + module.durationStr}
             </div>
           </Col>

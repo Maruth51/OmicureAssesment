@@ -5,7 +5,7 @@ const Description = ({ text }) => {
   return (
     <Container fluid>
       <h2>Description</h2>
-      <p>{text}</p>
+      <p className="text-secondary">{text}</p>
     </Container>
   );
 };

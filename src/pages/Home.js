@@ -4,8 +4,7 @@ import ModuleList from "../components/ModuleList";
 import MediaPlayer from "../components/MediaPlayer";
 import { getModuleList } from "../services/dataService";
 import TitleBar from "../components/TitleBar";
-import { connect } from "react-redux";
-
+import ExpertPanel from "../components/ExpertPanel";
 const Home = ({ dispatch }) => {
   const [isLoading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
@@ -34,22 +33,27 @@ const Home = ({ dispatch }) => {
   return (
     <Fragment>
       {isLoading ? (
-        <Spinner color="primary" />
+        <div className="container spinner">
+          <Spinner size="lg" color="primary" />
+        </div>
       ) : (
-        <Container fluid>
-          <TitleBar title={title} value={titleValue} />
-          <Row className="mx-3 justify-content-between">
-            <Col md={7} className="mx-3">
-              <MediaPlayer src={videoUrl} text={discription} />
-            </Col>
-            <Col md={4}>
-              <ModuleList modules={modules} updateContent={updateContent} />
-            </Col>
-          </Row>
-        </Container>
+        <Fragment>
+          <Container fluid>
+            <TitleBar title={title} value={titleValue} />
+            <Row className="mx-3 justify-content-between">
+              <Col md={7} className="mx-3">
+                <MediaPlayer src={videoUrl} text={discription} />
+              </Col>
+              <Col md={4}>
+                <ModuleList modules={modules} updateContent={updateContent} />
+              </Col>
+            </Row>
+          </Container>
+          <ExpertPanel />
+        </Fragment>
       )}
     </Fragment>
   );
 };
 
-export default connect()(Home);
+export default Home;

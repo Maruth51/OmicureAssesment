@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
 import Avatar from "@material-ui/core/Avatar";
-import "../styles.css";
 
 const IntroModule = () => {
   return (
