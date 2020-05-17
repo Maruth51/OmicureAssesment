@@ -24,13 +24,21 @@
   box-shadow: 0 0 10px rgba(175, 171, 171, 0.75);
 }
 .module-card {
+  position: relative;
   background-color: #fcfcfc;
   box-shadow: 0 0 20px rgba(243, 240, 240, 0.75);
   border-radius: 20px;
   border-style: solid;
   margin: 3px auto;
 }
-
+.dis-duration {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  font-size: small;
+  font-weight: bold;
+  color: rgb(165, 158, 158);
+}
 .mod-list {
   margin: 30px auto;
   box-shadow: 0 0 20px rgba(204, 198, 198, 0.75);

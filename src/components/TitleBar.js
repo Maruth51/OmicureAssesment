@@ -6,7 +6,7 @@ const TitleBar = ({ title, value }) => {
     <Row className="mx-3">
       <div className="title col-lg-8">
         <span>{title + " : "}</span>
-        <span className="link">{value}</span>
+        <span style={{ color: "primary" }}>{value}</span>
       </div>
     </Row>
   );

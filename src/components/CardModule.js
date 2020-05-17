@@ -1,20 +1,30 @@
 import React, { Fragment, useState } from "react";
+import "react-icons";
 import { Container, Row, Col, Card, Button } from "reactstrap";
+import { GrClock } from "react-icons/gr";
 import Avatar from "@material-ui/core/Avatar";
 import "../styles.css";
 import ChapterCard from "./ChapterCard";
+import { getChapterList } from "../services/dataService";
 
 const CardModule = ({ module }) => {
-  const [chapList, setChap] = useState([]);
+  const [chapters, setChapters] = useState([]);
+
   const handleClick = () => {
-    getChapterList(module.id)
-      .then(res => {
-        let { userChapterDetails } = res.lessonDetails;
-        setChap(userChapterDetails);
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    console.log(chapters);
+    if (chapters.length === 0) {
+      getChapterList(module.id)
+        .then(res => {
+          let lessonDetails = res.lessonDetails[0];
+          let { userChapterDetails } = lessonDetails;
+          setChapters(userChapterDetails);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    } else {
+      setChapters([]);
+    }
   };
   return (
     <Fragment>
@@ -33,17 +43,21 @@ const CardModule = ({ module }) => {
           <Col>
             <span className="module-title">{module.title + " - "}</span>
             <span className="module-name">{module.name}</span>
+            <div className="dis-duration">
+              <span>
+                <GrClock />
+              </span>
+              {" " + module.durationStr}
+            </div>
           </Col>
         </Row>
-        {chapList.length !== 0
-          ? chapList.map((chapter, inder) => {
-              return (
-                <Row>
-                  <ChapterCard />
-                </Row>
-              );
-            })
-          : ""}
+        {chapters.map((chapter, index) => {
+          return (
+            <Row>
+              <ChapterCard key={chapter.id} chapter={chapter} />
+            </Row>
+          );
+        })}
       </Container>
     </Fragment>
   );

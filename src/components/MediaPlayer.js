@@ -8,7 +8,7 @@ import Description from "./Description";
 const MediaPlayer = ({ src, text }) => {
   return (
     <Fragment>
-      <Player className="media-box" src={src}>
+      <Player className="media-box" src="">
         <BigPlayButton position="center" />
       </Player>
       <Description text={text} />
