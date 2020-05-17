@@ -5,12 +5,18 @@ import "../styles.css";
 import { Avatar } from "@material-ui/core";
 import IntroModule from "./IntroModule";
 
-const ModuleList = ({ modules }) => {
+const ModuleList = ({ modules, updateContent }) => {
   return (
     <Container className="mod-list">
       <IntroModule />
       {modules.map((module, index) => {
-        return <CardModule module={module} key={index} />;
+        return (
+          <CardModule
+            module={module}
+            key={index}
+            updateContent={updateContent}
+          />
+        );
       })}
     </Container>
   );

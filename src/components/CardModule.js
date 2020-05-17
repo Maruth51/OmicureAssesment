@@ -1,13 +1,12 @@
 import React, { Fragment, useState } from "react";
-import "react-icons";
 import { Container, Row, Col, Card, Button } from "reactstrap";
-import { GrClock } from "react-icons/gr";
+//import { GrClock } from "react-icons/gr";
 import Avatar from "@material-ui/core/Avatar";
 import "../styles.css";
 import ChapterCard from "./ChapterCard";
 import { getChapterList } from "../services/dataService";
 
-const CardModule = ({ module }) => {
+const CardModule = ({ module, updateContent }) => {
   const [chapters, setChapters] = useState([]);
 
   const handleClick = () => {
@@ -28,11 +27,8 @@ const CardModule = ({ module }) => {
   };
   return (
     <Fragment>
-      <Container
-        className="module-card border border-solid p-2 my-3"
-        onClick={handleClick}
-      >
-        <Row>
+      <Container className="module-card border border-solid p-2 my-3">
+        <Row onClick={handleClick}>
           <span className="pl-3 py-2">
             <Avatar
               className="avatar"
@@ -44,9 +40,9 @@ const CardModule = ({ module }) => {
             <span className="module-title">{module.title + " - "}</span>
             <span className="module-name">{module.name}</span>
             <div className="dis-duration">
-              <span>
+              {/* <span>
                 <GrClock />
-              </span>
+              </span> */}
               {" " + module.durationStr}
             </div>
           </Col>
@@ -54,7 +50,12 @@ const CardModule = ({ module }) => {
         {chapters.map((chapter, index) => {
           return (
             <Row>
-              <ChapterCard key={chapter.id} chapter={chapter} />
+              <ChapterCard
+                key={chapter.id}
+                chapter={chapter}
+                updateContent={updateContent}
+                id={index + 1}
+              />
             </Row>
           );
         })}

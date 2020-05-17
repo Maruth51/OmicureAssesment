@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row, Col, Spinner } from "reactstrap";
 import ModuleList from "../components/ModuleList";
 import MediaPlayer from "../components/MediaPlayer";
-import Description from "../components/Description";
 import { getModuleList } from "../services/dataService";
 import TitleBar from "../components/TitleBar";
 import { connect } from "react-redux";
@@ -28,6 +27,10 @@ const Home = ({ dispatch }) => {
         setLoading(false);
       });
   }, []);
+  const updateContent = (url, newtitle) => {
+    setVideoUrl(url);
+    setTitleValue(newtitle);
+  };
   return (
     <Fragment>
       {isLoading ? (
@@ -40,7 +43,7 @@ const Home = ({ dispatch }) => {
               <MediaPlayer src={videoUrl} text={discription} />
             </Col>
             <Col md={4}>
-              <ModuleList modules={modules} />
+              <ModuleList modules={modules} updateContent={updateContent} />
             </Col>
           </Row>
         </Container>
