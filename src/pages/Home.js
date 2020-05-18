@@ -44,7 +44,7 @@ const Home = ({ dispatch }) => {
               <Col md={7} className="mx-3">
                 <MediaPlayer src={videoUrl} text={discription} />
               </Col>
-              <Col md={4}>
+              <Col>
                 <ModuleList modules={modules} updateContent={updateContent} />
               </Col>
             </Row>
