@@ -3,8 +3,8 @@ import { Row } from "reactstrap";
 
 const TitleBar = ({ title, value }) => {
   return (
-    <Row className="mx-3">
-      <div className="title col-lg-8">
+    <Row>
+      <div className="title col-lg-7">
         <span className="text-secondary">{title + " : "}</span>
         <span style={{ color: "blue" }}>{value}</span>
       </div>

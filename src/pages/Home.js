@@ -5,6 +5,7 @@ import MediaPlayer from "../components/MediaPlayer";
 import { getModuleList } from "../services/dataService";
 import TitleBar from "../components/TitleBar";
 import ExpertPanel from "../components/ExpertPanel";
+import Description from "../components/Description";
 const Home = ({ dispatch }) => {
   const [isLoading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
@@ -38,18 +39,27 @@ const Home = ({ dispatch }) => {
         </div>
       ) : (
         <Fragment>
-          <Container fluid>
+          <Container>
             <TitleBar title={title} value={titleValue} />
-            <Row className="mx-3 justify-content-between">
-              <Col md={7} className="mx-3">
-                <MediaPlayer src={videoUrl} text={discription} />
+            <Row>
+              <Col md={7}>
+                <MediaPlayer src={videoUrl} />
               </Col>
               <Col>
                 <ModuleList modules={modules} updateContent={updateContent} />
               </Col>
             </Row>
+            <Row>
+              <Col md={8}>
+                <Description text={discription} />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <ExpertPanel />
+              </Col>
+            </Row>
           </Container>
-          <ExpertPanel />
         </Fragment>
       )}
     </Fragment>

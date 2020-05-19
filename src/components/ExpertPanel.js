@@ -12,18 +12,14 @@ const ExpertPanel = () => {
   }, []);
   return (
     <Fragment>
-      <Container fluid>
-        <div className="ml-5">
-          <h3 className="pl-2">Expert Pannel</h3>
-          <div className="conatiner">
-            <div className="expert-row">
-              {experts.map((expert, index) => {
-                return <Expert expert={expert} />;
-              })}
-            </div>
-          </div>
+      <h3>Expert Pannel</h3>
+      <div className="conatiner">
+        <div className="expert-row">
+          {experts.map((expert, index) => {
+            return <Expert expert={expert} />;
+          })}
         </div>
-      </Container>
+      </div>
     </Fragment>
   );
 };

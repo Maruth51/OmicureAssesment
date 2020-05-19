@@ -1,5 +1,7 @@
 body {
   font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .media-box {
   margin: 30px auto;
@@ -20,21 +22,21 @@ body {
   border-radius: 8px;
 }
 .avatar {
-  box-shadow: 0 0 10px rgba(175, 171, 171, 0.75);
+  box-shadow: 0 0 10px rgba(243, 229, 229, 0.75);
 }
 .module-card {
   position: relative;
-  background-color: #fcfcfc;
-  box-shadow: 0 0 20px rgba(243, 240, 240, 0.75);
+  box-shadow: 0 0 10px rgba(219, 216, 216, 0.966);
   border-radius: 20px;
-  border-style: solid;
   margin: 3px auto;
+  border-color: #ffffff;
+  align-content: center;
 }
 .dis-duration {
   position: absolute;
   right: 20px;
   bottom: 5px;
-  font-size: small;
+  font-size: x-small;
   font-weight: bold;
   color: rgb(165, 158, 158);
 }
@@ -46,12 +48,11 @@ body {
   box-shadow: 0 0 20px rgba(204, 198, 198, 0.75);
   border-radius: 20px;
   border-style: solid;
-  min-width: 400px;
-  max-width: 450px;
-  max-height: 450px;
+  width: 350px;
+  max-height: 400px;
   border-width: 1px;
   border-radius: 12px;
-  background-color: rgb(240, 240, 241);
+  background-color: rgb(255, 255, 255);
   overflow-y: scroll;
   border-color: rgb(206, 204, 204);
 }
@@ -82,12 +83,12 @@ body {
 .module-name {
   color: #7866df;
   font-weight: bold;
-  font-size: small;
+  font-size: x-small;
 }
 .module-title {
   color: rgb(212, 47, 212);
-  font-size: small;
-  font-weight: bold;
+  font-size: x-small;
+  font-weight: bolder;
 }
 .spinner {
   position: fixed;
